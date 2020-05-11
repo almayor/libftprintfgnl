@@ -12,6 +12,11 @@ cd libftprintfgnl
 git submodule update
 make
 ```
+* Then include the header in your projects
+
+```C
+#include "libftprintfgnl.h
+```
 
 ---
 If you have any questions, please contact me on Github.
