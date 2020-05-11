@@ -6,11 +6,26 @@
 #    By: unite <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/10 21:07:48 by unite             #+#    #+#              #
-#    Updated: 2020/05/10 22:24:58 by unite            ###   ########.fr        #
+#    Updated: 2020/05/11 16:19:53 by unite            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintfgnl.a
+
+################################################################################
+
+COMPILE = gcc -c
+ARCHIVE = ar rc
+INDEX = ranlib
+LINK = gcc
+
+CFLAGS = -Wall -Wextra -Werror
+CFLAGS_OPTIMISE = -O3 -std=gnu11 -ffast-math -march=native
+CFLAGS_DEPEND = -MMD
+
+ifeq ($(DEBUG), 1)
+	COMPILE += -g
+endif
 
 ############################## LINK OBJECT FILES ###############################
 
@@ -25,20 +40,6 @@ libftprintf:
 	make -C ft_printf PATHFT=../libft DEBUG=$(DEBUG)
 
 ################################ COMPILING GNL #################################
-
-COMPILE = gcc -c
-ARCHIVE = ar rc
-INDEX = ranlib
-LINK = gcc
-
-CFLAGS = -Wall -Wextra -Werror
-CFLAGS_OPTIMISE = -O3 -std=gnu11 -ffast-math -march=native
-CFLAGS_DEPEND = -MMD
-
-
-ifeq ($(DEBUG), 1)
-	COMPILE += -g
-endif
 
 get_next_line/get_next_line.o: get_next_line/get_next_line.c
 	$(COMPILE) $(CFLAGS) $(CFLAGS_DEPEND) $(CFLAGS_OPTIMISE) $< -o $@ \
