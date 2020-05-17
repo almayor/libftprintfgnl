@@ -6,7 +6,7 @@
 #    By: unite <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/10 21:07:48 by unite             #+#    #+#              #
-#    Updated: 2020/05/11 16:19:53 by unite            ###   ########.fr        #
+#    Updated: 2020/05/17 04:04:25 by unite            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,13 @@ NAME = libftprintfgnl.a
 
 ################################################################################
 
-COMPILE = gcc -c
-ARCHIVE = ar rc
-INDEX = ranlib
-LINK = gcc
+RM = /bin/rm
+CP = /bin/cp
+
+COMPILE = $(GCC) -c
+ARCHIVE = /usr/bin/ar rc
+INDEX = /usr/bin/ranlib
+LINK = $(GCC)
 
 CFLAGS = -Wall -Wextra -Werror
 CFLAGS_OPTIMISE = -O3 -std=gnu11 -ffast-math -march=native
@@ -30,14 +33,14 @@ endif
 ############################## LINK OBJECT FILES ###############################
 
 $(NAME): get_next_line/get_next_line.o libftprintf
-	cp ft_printf/libftprintf.a $(NAME)
+	$(CP) ft_printf/libftprintf.a $(NAME)
 	$(ARCHIVE) $(NAME) get_next_line/get_next_line.o
 	$(INDEX) $(NAME)
 
 ############################ COMPILING LIBFTPRINTF #############################
 
 libftprintf:
-	make -C ft_printf PATHFT=../libft DEBUG=$(DEBUG)
+	$(MAKE) -C ft_printf PATHFT=../libft DEBUG=$(DEBUG)
 
 ################################ COMPILING GNL #################################
 
@@ -54,12 +57,12 @@ get_next_line/get_next_line.o: get_next_line/get_next_line.c
 all: $(NAME)
 
 clean:
-	make -C ft_printf fclean PATHFT=../libft
-	rm -f get_next_line/get_next_line.o get_next_line/get_next_line.d
+	$(MAKE) -C ft_printf fclean PATHFT=../libft
+	$(RM) -f get_next_line/get_next_line.o get_next_line/get_next_line.d
 
 fclean: clean
-	rm -f $(NAME)
-	rm -f libft.h get_next_line.h ft_printf.h 
+	$(RM) -f $(NAME)
+	$(RM) -f libft.h get_next_line.h ft_printf.h 
 
 re: fclean all
 
