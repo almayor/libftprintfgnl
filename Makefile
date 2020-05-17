@@ -6,7 +6,7 @@
 #    By: unite <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/10 21:07:48 by unite             #+#    #+#              #
-#    Updated: 2020/05/17 04:04:25 by unite            ###   ########.fr        #
+#    Updated: 2020/05/17 04:51:01 by unite            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,14 @@ NAME = libftprintfgnl.a
 
 RM = /bin/rm
 CP = /bin/cp
+CC = /usr/bin/gcc
 
-COMPILE = $(GCC) -c
+################################################################################
+
+COMPILE = $(CC) -c
 ARCHIVE = /usr/bin/ar rc
 INDEX = /usr/bin/ranlib
-LINK = $(GCC)
+LINK = $(CC)
 
 CFLAGS = -Wall -Wextra -Werror
 CFLAGS_OPTIMISE = -O3 -std=gnu11 -ffast-math -march=native
