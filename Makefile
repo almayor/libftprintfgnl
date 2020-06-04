@@ -6,7 +6,7 @@
 #    By: unite <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/10 21:07:48 by unite             #+#    #+#              #
-#    Updated: 2020/05/17 04:51:01 by unite            ###   ########.fr        #
+#    Updated: 2020/06/05 01:56:18 by unite            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,10 @@ NAME = libftprintfgnl.a
 
 ################################################################################
 
-RM = /bin/rm
-CP = /bin/cp
-CC = /usr/bin/gcc
-
-################################################################################
-
-COMPILE = $(CC) -c
-ARCHIVE = /usr/bin/ar rc
-INDEX = /usr/bin/ranlib
-LINK = $(CC)
+COMPILE = gcc -c
+ARCHIVE = ar rc
+INDEX = ranlib
+LINK = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 CFLAGS_OPTIMISE = -O3 -std=gnu11 -ffast-math -march=native
@@ -61,11 +55,11 @@ all: $(NAME)
 
 clean:
 	$(MAKE) -C ft_printf fclean PATHFT=../libft
-	$(RM) -f get_next_line/get_next_line.o get_next_line/get_next_line.d
+	rm -f get_next_line/get_next_line.o get_next_line/get_next_line.d
 
 fclean: clean
-	$(RM) -f $(NAME)
-	$(RM) -f libft.h get_next_line.h ft_printf.h 
+	rm -f $(NAME)
+	rm -f libft.h get_next_line.h ft_printf.h 
 
 re: fclean all
 
