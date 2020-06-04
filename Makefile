@@ -6,7 +6,7 @@
 #    By: unite <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/10 21:07:48 by unite             #+#    #+#              #
-#    Updated: 2020/06/05 02:02:54 by unite            ###   ########.fr        #
+#    Updated: 2020/06/05 02:04:30 by unite            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,8 @@ endif
 
 $(NAME): get_next_line/get_next_line.o libftprintf
 	cp ft_printf/libftprintf.a $(NAME)
-	ar rc $(NAME) get_next_line/get_next_line.o
-	randlib $(NAME)
+	$(ARCHIVE) $(NAME) get_next_line/get_next_line.o
+	$(INDEX) $(NAME)
 
 ############################ COMPILING LIBFTPRINTF #############################
 
