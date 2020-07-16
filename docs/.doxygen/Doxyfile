@@ -1,0 +1,27 @@
+ALPHABETICAL_INDEX = NO
+ALWAYS_DETAILED_SEC = YES
+CALL_GRAPH = YES
+COLLABORATION_GRAPH = YES
+COMPACT_LATEX = NO
+DIRECTORY_GRAPH = NO
+EXTERNAL_PAGES = YES
+EXTRACT_ALL = NO
+EXTRACT_STATIC = NO
+GENERATE_HTML = YES
+GENERATE_LATEX = NO
+GENERATE_TAGFILE = docs/.doxygen/libftprintfgnl.tag
+HAVE_DOT = YES
+HTML_DYNAMIC_MENUS = YES
+HTML_DYNAMIC_SECTIONS = YES
+HTML_OUTPUT = docs/html
+INLINE_SOURCES = NO
+INPUT = libftprintfgnl.h
+JAVADOC_AUTOBRIEF = YES
+OPTIMIZE_OUTPUT_FOR_C = YES
+PROJECT_NAME = libftprintfgnl
+RECURSIVE = YES
+REFERENCES_RELATION = NO
+SOURCE_BROWSER = YES
+TAGFILES = libft/docs/.doxygen/libft.tag=https://almayor.github.io/libft/html/ \
+	get_next_line/docs/.doxygen/get_next_line.tag=https://almayor.github.io/get_next_line/html/ \
+	ft_printf/docs/.doxygen/ft_printf.tag=https://almayor.github.io/ft_printf/html/ \
