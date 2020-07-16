@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['get_5fnext_5fline_2ec_101',['get_next_line.c',['https://almayor.github.io/get_next_line/html/get__next__line_8c.html',1,'']]],
-  ['get_5fnext_5fline_2eh_102',['get_next_line.h',['https://almayor.github.io/get_next_line/html/get__next__line_8h.html',1,'']]]
+  ['libft_2eh_93',['libft.h',['https://almayor.github.io/libft/html/libft_8h.html',1,'']]],
+  ['libftprintfgnl_2eh_94',['libftprintfgnl.h',['../libftprintfgnl_8h.html',1,'']]]
 ];
