@@ -6,7 +6,7 @@
 #    By: unite <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/10 21:07:48 by unite             #+#    #+#              #
-#    Updated: 2020/06/05 02:04:30 by unite            ###   ########.fr        #
+#    Updated: 2020/09/14 01:22:49 by unite            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,15 +29,10 @@ endif
 
 ############################## LINK OBJECT FILES ###############################
 
-$(NAME): get_next_line/get_next_line.o libftprintf
+$(NAME): ft_printf/libftprintf.a get_next_line/get_next_line.o
 	cp ft_printf/libftprintf.a $(NAME)
 	$(ARCHIVE) $(NAME) get_next_line/get_next_line.o
 	$(INDEX) $(NAME)
-
-############################ COMPILING LIBFTPRINTF #############################
-
-libftprintf:
-	$(MAKE) -C ft_printf PATHFT=../libft DEBUG=$(DEBUG)
 
 ################################ COMPILING GNL #################################
 
@@ -49,9 +44,11 @@ get_next_line/get_next_line.o: get_next_line/get_next_line.c
 
 ################################################################################
 
+.DEFAULT_GOAL = all
+
 .PHONY : all clean fclean re libftprintf
 
-all: $(NAME)
+all: libftprintf $(NAME)
 
 clean:
 	$(MAKE) -C ft_printf fclean PATHFT=../libft
@@ -59,8 +56,10 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f libft.h get_next_line.h ft_printf.h 
 
 re: fclean all
+
+libftprintf:
+	$(MAKE) -C ft_printf all PATHFT=../libft DEBUG=$(DEBUG)
 
 ################################################################################
