@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: unite <marvin@42.fr>                       +#+  +:+       +#+         #
+#    By: user <user@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/10 21:07:48 by unite             #+#    #+#              #
-#    Updated: 2020/09/14 01:22:49 by unite            ###   ########.fr        #
+#    Updated: 2020/10/14 23:28:20 by user             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ INDEX = ranlib
 LINK = gcc
 
 CFLAGS = -Wall -Wextra -Werror
-CFLAGS_OPTIMISE = -O3 -std=gnu11 -ffast-math -march=native
 CFLAGS_DEPEND = -MMD
 
 ifeq ($(DEBUG), 1)
@@ -37,7 +36,7 @@ $(NAME): ft_printf/libftprintf.a get_next_line/get_next_line.o
 ################################ COMPILING GNL #################################
 
 get_next_line/get_next_line.o: get_next_line/get_next_line.c
-	$(COMPILE) $(CFLAGS) $(CFLAGS_DEPEND) $(CFLAGS_OPTIMISE) $< -o $@ \
+	$(COMPILE) $(CFLAGS) $(CFLAGS_DEPEND) $< -o $@ \
 		-I libft/ -I get_next_line/
 
 -include get_next_line/get_next_line.d
